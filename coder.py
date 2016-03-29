@@ -2,46 +2,47 @@ numbers = []
 alive = True
 rightNumbers = True
 
+
 while alive:
-	numbers = raw_input("Write the numbers here(1-9 seperate by ,): ").split(",")
-	num = map(int,numbers)
+	numbers = raw_input("Write the numbers here(1-9 seperate by ,): ")
+	sepNumbers = list(numbers)
 	print ("You entered the following numbers")
-	print (num)
+	print (sepNumbers)
+	
 
-
-	for x in range (0, len(num)):
+	for x in range (0, len(sepNumbers)):
 		#print thisNumber
-		if num[x] == 0:
-			num[x] = 5
-		elif num[x] == 1:
-			num[x] = 9
-		elif num[x] == 2:
-			num[x] = 8
-		elif num[x] == 3:
-			num[x] = 7
-		elif num[x] == 4:
-			num[x] = 6
-		elif num[x] == 5:
-			num[x] = 0
-		elif num[x] == 6:
-			num[x] = 4
-		elif num[x] == 7:
-			num[x] = 3
-		elif num[x] == 8:
-			num[x] = 2
-		elif num[x] == 9:
-			num[x] = 1
+		if sepNumbers[x] == "0":
+			sepNumbers[x] = 5
+		elif sepNumbers[x] == "1":
+			sepNumbers[x] = 9
+		elif sepNumbers[x] == "2":
+			sepNumbers[x] = 8
+		elif sepNumbers[x] == "3":
+			sepNumbers[x] = 7
+		elif sepNumbers[x] == "4":
+			sepNumbers[x] = 6
+		elif sepNumbers[x] == "5":
+			sepNumbers[x] = 0
+		elif sepNumbers[x] == "6":
+			sepNumbers[x] = 4
+		elif sepNumbers[x] == "7":
+			sepNumbers[x] = 3
+		elif sepNumbers[x] == "8":
+			sepNumbers[x] = 2
+		elif sepNumbers[x] == "9":
+			sepNumbers[x] = 1
 		else:
 			print ("you are either using letters or you are not seperating you didgets with ,")
 			print ("either way, thats wrong crackhead!")
+			x = len(sepNumbers)
 			rightNumbers = False
 
 	if rightNumbers == True:
 		print ("The Przbelewsky code is")
-		print (num)
+		print (sepNumbers)
 
 	quitGame = raw_input("Type quit to stop the deciphering or press ENTER to continue: ").lower()
 	if quitGame == "quit":
 		alive = False
 		print ("thanks for playing")
-
