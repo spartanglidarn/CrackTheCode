@@ -4,7 +4,7 @@ rightNumbers = True
 
 
 while alive:
-	numbers = raw_input("Write the numbers here(1-9 seperate by ,): ")
+	numbers = raw_input("Write the numbers here: ")
 	sepNumbers = list(numbers)
 	print ("You entered the following numbers")
 	print (sepNumbers)
@@ -33,10 +33,9 @@ while alive:
 		elif sepNumbers[x] == "9":
 			sepNumbers[x] = 1
 		else:
-			print ("you are either using letters or you are not seperating you didgets with ,")
-			print ("either way, thats wrong crackhead!")
-			x = len(sepNumbers)
+			print ("shiiiiiiiit! Thats not numbers, try again U fool")
 			rightNumbers = False
+			break
 
 	if rightNumbers == True:
 		print ("The Przbelewsky code is")
@@ -46,3 +45,6 @@ while alive:
 	if quitGame == "quit":
 		alive = False
 		print ("thanks for playing")
+	else:
+		rightNumbers = True
+
