@@ -3,10 +3,12 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-
-	
 	
 	public static void main(String[] args) {
+	Gui gui = new Gui();
+	gui.showTextFieldDemo();
+	
+		
 	boolean alive = true;	
 		while (alive){	
 			System.out.println("Write the numbers here: ");
