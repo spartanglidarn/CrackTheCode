@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -10,15 +11,13 @@ public class Main {
 		while (alive){	
 			System.out.println("Write the numbers here: ");
 			Scanner userInput = new Scanner(System.in);
-			String input = userInput.nextLine();
-			System.out.println(input);
+			String input = userInput.next();
+			//System.out.println(input);
 			
 			int [] numbers = new int[input.length()];
 			for (int x = 0; x < input.length(); x++) {
-				numbers[x] = input.charAt(x) - 0;
-				System.out.println(numbers[x]);
+				numbers[x] = input.charAt(x) - '0';
 			}
-			
 			
 			HashMap<Integer, Integer> codeMap = new HashMap<>();
 			
@@ -33,7 +32,12 @@ public class Main {
 			codeMap.put(8, 2);
 			codeMap.put(9, 1);
 			
+			for (int x = 0; x < numbers.length; x++) {
+				numbers[x] = codeMap.get(numbers[x]);
+			}
 			
+			String codeResult = Arrays.toString(numbers);
+			System.out.println(codeResult);
 			
 			System.out.println("Press enter to countinue, write quit to quit the program: ");
 			Scanner q = new Scanner(System.in);
